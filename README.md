@@ -1,6 +1,6 @@
 # Custom Hyprland Dotfiles
 ![swappy-20240929-180827](https://github.com/user-attachments/assets/e07236fd-982a-48ea-b38a-883934f703d2)
-##Game Mode
+## Game Mode
 ![swappy-20240929-181011](https://github.com/user-attachments/assets/0e5e9fad-6c69-412d-8f87-586622f705bd)
 
 
