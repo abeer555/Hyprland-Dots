@@ -1,4 +1,7 @@
 # Custom Hyprland Dotfiles
+![swa![swappy-20240929-181011](https://github.com/user-attachments/assets/27e9e2a7-f7a7-4a25-a897-2261ba781def)
+ppy-20240929-180827](https://github.com/user-attachments/assets/72c91afe-16d3-43ab-a5f1-b008810119d8)
+
 
 ## About
 
