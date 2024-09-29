@@ -1,13 +1,20 @@
 # Custom Hyprland Dotfiles
-![swa![swappy-20240929-181011](https://github.com/user-attachments/assets/27e9e2a7-f7a7-4a25-a897-2261ba781def)
-ppy-20240929-180827](https://github.com/user-attachments/assets/72c91afe-16d3-43ab-a5f1-b008810119d8)
+![swappy-20240929-180827](https://github.com/user-attachments/assets/e07236fd-982a-48ea-b38a-883934f703d2)
+![swappy-20240929-181011](https://github.com/user-attachments/assets/0e5e9fad-6c69-412d-8f87-586622f705bd)
 
 
 ## About
 
 This repository contains my personalized dotfiles for [Hyprland](https://github.com/hyprwm/Hyprland), built upon the excellent foundation provided by [Jakoolit](https://github.com/JaKooLit). These customizations reflect my preferred setup and workflow, tailored to enhance my Hyprland experience.
 
+
 ### Key Features:
+- Added KDE-like taskbar for easy navigation and window management
+![swappy-20240929-181834](https://github.com/user-attachments/assets/0f1613df-079f-48fa-a84b-67330de0b12f)
+
+- Customized color scheme for improved visual aesthetics and reduced eye strain
+- Implemented custom keybindings for enhanced productivity and workflow efficiency
+
 
 ## Acknowledgements
 
