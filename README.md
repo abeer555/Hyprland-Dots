@@ -17,6 +17,7 @@ To use this configuration, follow these steps:
 cd Hyprland-dots
 chmod +x install.sh
 ./install.sh
+```
 
 ### Key Features:
 - Added KDE-like taskbar for easy navigation and window management
