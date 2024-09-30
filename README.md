@@ -1,4 +1,4 @@
-# Custom Hyprland Dotfiles
+# Hyprland Dotfiles
 <div align="center">
 
 https://github.com/user-attachments/assets/8690cc57-dbaa-4837-8540-3cf82a054ddf
