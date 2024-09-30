@@ -20,6 +20,7 @@ This repository contains my personalized dotfiles for [Hyprland](https://github.
 To use this configuration, follow these steps:
 
 ```bash
+git clone https://github.com/abeer555/Hyprland-Dots.git
 cd Hyprland-dots
 chmod +x install.sh
 ./install.sh
