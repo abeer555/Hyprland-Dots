@@ -9,6 +9,15 @@
 This repository contains my personalized dotfiles for [Hyprland](https://github.com/hyprwm/Hyprland), built upon the excellent foundation provided by [Jakoolit](https://github.com/JaKooLit). These customizations reflect my preferred setup and workflow, tailored to enhance my Hyprland experience.
 
 
+## Usage
+
+To use this configuration, follow these steps:
+
+```bash
+cd Hyprland-dots
+chmod +x install.sh
+./install.sh
+
 ### Key Features:
 - Added KDE-like taskbar for easy navigation and window management
 ![swappy-20240929-181834](https://github.com/user-attachments/assets/0f1613df-079f-48fa-a84b-67330de0b12f)
