@@ -27,20 +27,31 @@ print_newlines() {
 
 # Ask user if JakooLit's config is installed
 print_color_nonl 6 "Do you have JakooLit's config installed? (y/n): "
-read proceed
+read jakoolit_installed
 
-print_newlines 2
+print_newlines 1
 
-if [[ "$proceed" != [Yy]* ]]; then
-  print_color 1 "Installation aborted."
-  print_newlines 1
-  print_color 3 "Install JakooLit's dotfiles first."
-  print_newlines 1
+if [[ "$jakoolit_installed" != [Yy]* ]]; then
+  print_color 3 "JakooLit's config is not installed."
   print_color 4 "For more information visit https://github.com/JaKooLit/Arch-Hyprland"
-  print_newlines 2
-  exit 1
+  print_newlines 1
+
+  print_color_nonl 6 "Do you wish to continue anyway? (y/n): "
+  read continue_anyway
+
+  print_newlines 1
+
+  if [[ "$continue_anyway" != [Yy]* ]]; then
+    print_color 1 "Installation aborted."
+    print_newlines 2
+    exit 1
+  fi
 fi
 
+# Continue with the rest of your script here
+print_color 2 "Proceeding with the installation..."
+
+# ... (rest of your script)
 print_color 2 "Proceeding with the installation..."
 
 # Define source and destination directories
