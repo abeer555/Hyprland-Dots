@@ -11,7 +11,7 @@
 	//"mode": "dock",
 	"exclusive": true,
 	"passthrough": false,
-	"position": "bottom",
+	"position": "top",
 	"spacing": 3,
 	"fixed-center": true,
 	"ipc": true,
@@ -19,7 +19,6 @@
 	"margin-left": 8,
 	"margin-right": 8,
 	"modules-left": [
-		"group/app_drawer",
 		"idle_inhibitor",
 		"hyprland/workspaces#rw",
 	],
@@ -27,15 +26,42 @@
 		"wlr/taskbar",
 		// "custom/swaync",
 		// "custom/cava_mviz",
+		"custom/swaync",
 		"custom/separator#blank",
 	],
 	"modules-right": [
+		"network#speed",
+    "custom/backlight",
+		"backlight/slider",
+		"custom/speaker",
+		"pulseaudio/slider",
 		"battery",
 		"tray",
 		// "bluetooth",
-		"wireplumber",
-		"clock",
+		"clock#2",
 		"custom/lock",
 		"custom/power",
 	],
+	// Additional modules //
+	"pulseaudio/slider": {
+		"min": 0,
+		"max": 100,
+		"orientation": "horizontal"
+	},
+	"custom/speaker": {
+		"exec": "echo '🔊'",
+		"interval": 1,
+		"format": "{}"
+	},
+	"backlight/slider": {
+		"min": 0,
+		"max": 100,
+		"orientation": "horizontal",
+		"device": "intel_backlight"
+	},
+	"custom/backlight": {
+		"exec": "echo '✨'",
+		"interval": 1,
+		"format": "{}"
+	},
 }
