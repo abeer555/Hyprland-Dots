@@ -39,3 +39,8 @@ chmod +x install.sh
 A huge thank you to [Jakoolit](https://github.com/JaKooLit) for their outstanding Hyprland dotfiles, which served as the inspiration and starting point for this project. This work builds upon their efforts, and full credit goes to them for the original implementation.
 
 Feel free to explore, use, and adapt these dotfiles to suit your needs. Contributions and suggestions are always welcome!
+
+## To Do
+
+Configure Rofi
+Add Alt tab functioanlity like windows
