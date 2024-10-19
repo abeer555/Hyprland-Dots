@@ -42,5 +42,5 @@ Feel free to explore, use, and adapt these dotfiles to suit your needs. Contribu
 
 ## To Do
 
-Configure Rofi
-Add Alt tab functioanlity like windows
+- Configure Rofi
+- Add Alt tab functioanlity like windows
