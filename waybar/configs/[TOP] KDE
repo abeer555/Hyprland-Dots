@@ -1,5 +1,3 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-// ### DEFAULT v2 (Laptop)  - Top ### //
 {
 	"include": [
 		"$HOME/.config/waybar/Modules",
@@ -15,9 +13,9 @@
 	"spacing": 3,
 	"fixed-center": true,
 	"ipc": true,
-	"margin-top": 3,
-	"margin-left": 8,
-	"margin-right": 8,
+	"margin-top": 2,
+	"margin-left": 2,
+	"margin-right": 2,
 	"modules-left": [
 		"custom/menu",
 		"idle_inhibitor",
@@ -40,7 +38,7 @@
 		"pulseaudio/slider",
 		"battery",
 		"group/tray",
-		"custom/net",
+		// "custom/net",
 		// "bluetooth",
 		// "network",
 		"clock#2",
@@ -61,7 +59,7 @@
     },
 	"pulseaudio/slider": {
 		"min": 0,
-		"max": 100,
+		"max": 50,
 		"orientation": "horizontal"
 	},
 	"custom/speaker": {
