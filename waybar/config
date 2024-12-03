@@ -1,1 +1,90 @@
-/home/abeer/.config/waybar/configs/[BOT] KDE
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+// ### DEFAULT v2 (Laptop)  - Top ### //
+{
+	"include": [
+		"$HOME/.config/waybar/Modules",
+		"$HOME/.config/waybar/ModulesWorkspaces",
+		"$HOME/.config/waybar/ModulesCustom",
+		"$HOME/.config/waybar/ModulesGroups",
+	],
+	"layer": "top",
+	//"mode": "dock",
+	"exclusive": true,
+	"passthrough": false,
+	"position": "top",
+	"spacing": 3,
+	"fixed-center": true,
+	"ipc": true,
+	"margin-top": 3,
+	"margin-left": 8,
+	"margin-right": 8,
+	"modules-left": [
+		"custom/menu",
+		"idle_inhibitor",
+		"custom/icon4",
+		"hyprland/workspaces#rw",
+	],
+	"modules-center": [
+		"wlr/taskbar",
+		// "custom/swaync",
+		// "custom/cava_mviz",
+		// "custom/swaync",
+		// "custom/separator#blank",
+		"group/cpu",
+	],
+	"modules-right": [
+		"power-profiles-daemon",
+    // "group/backlight",
+		// "group/speaker",
+		"custom/speaker",
+		"pulseaudio/slider",
+		"battery",
+		"group/tray",
+		"custom/net",
+		// "bluetooth",
+		// "network",
+		"clock#2",
+		"custom/lock",
+		"custom/power",
+	],
+	// Additional modules //
+	"custom/net": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "interval": 1,
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{bandwidthDownBytes}/{bandwidthUpBytes} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "min-length": 18,
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+	"pulseaudio/slider": {
+		"min": 0,
+		"max": 100,
+		"orientation": "horizontal"
+	},
+	"custom/speaker": {
+		// "exec": "echo '🔊'",
+		"exec": "echo '📢'",
+
+		"interval": 1,
+		"format": "{}"
+	},
+	"backlight/slider": {
+		"min": 0,
+		"max": 100,
+		"orientation": "horizontal",
+		"device": "intel_backlight"
+	},
+	"custom/backlight": {
+		"exec": "echo '✨'",
+		"interval": 1,
+		"format": "{}"
+	},
+    "custom/icon4": {
+        "format": "{}",
+        "on-click": "gnome-calculator",
+        "on-click-right": "kitty -e bc"
+    },
+}

@@ -5,6 +5,71 @@
 
 {
 // GROUPS
+"group/tray":{
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 500,
+		"children-class": "network",
+		"transition-left-to-right": true
+        },
+	"modules": [
+		"network#1",
+		"network#2",
+		"network#speed",
+		"tray",
+	]
+},
+"group/battery": {
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 500,
+		"children-class": "custom/battery",
+		"transition-left-to-right": true
+	},
+	"modules": [
+		"battery"
+	]
+},
+"group/cpu":{
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 500,
+		"children-class": "tempurature",
+		"transition-left-to-right": true
+        },
+	"modules": [
+		"custom/swaync",
+		"cpuIcon",
+		"cpu",
+		"memory",
+		"temperature",
+	]
+},
+"group/backlight":{
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 500,
+		"children-class": "custom/backlight",
+		"transition-left-to-right": true
+        },
+	"modules": [
+		"custom/backlight",
+		"backlight/slider",
+	]
+},
+"group/speaker":{
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 500,
+		"children-class": "custom/speaker",
+		"transition-left-to-right": true
+        },
+	"modules": [
+		"custom/speaker",
+		"pulseaudio/slider",
+	]
+},
+
 "group/app_drawer": {
 	"orientation": "inherit",
 	"drawer": {

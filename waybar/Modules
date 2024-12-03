@@ -82,12 +82,12 @@
 			"warning": 30,
 			"critical": 15
 		},
-		"format": "{icon} {capacity}%",
-		"format-charging": " {capacity}%",
-		"format-plugged": "󱘖 {capacity}%",
+		"format": "{icon}",
+		"format-charging": "",
+		"format-plugged": "󱘖",
 		"format-alt-click": "click",
-		"format-full": "{icon} Full",
-		"format-alt": "{icon} {time}",
+		"format-full": "{icon} {Full}",
+		"format-alt": "{icon} {capacity}%",
 		"format-icons": [
 			"󰂎",
 			"󰁺",
@@ -103,7 +103,8 @@
 		],
 		"format-time": "{H}h {M}min",
 		"tooltip": true,
-		"tooltip-format": "{timeTo} {power}w",
+		"tooltip-format": "{capacity}% {timeTo} {power}w",
+		// "on-click": "notify-send 'Battery Capacity' '{capacity}%'",
 		"on-click-middle": "$HOME/.config/hypr/scripts/ChangeBlur.sh",
 		"on-click-right": "$HOME/.config/hypr/scripts/Wlogout.sh",
 	},
@@ -167,10 +168,16 @@
 		// "format": "{:%a %d | %H:%M}", // 24H
 		"format-alt": "{:%A, %d %B, %Y (%R)}"
 	},
+
+	"cpuIcon": {
+		"format": "󰍛",
+		"interval": 1,
+		"min-length": 1,
+	},
 	"cpu": {
 		"format": "{usage}% 󰍛",
 		"interval": 1,
-		"min-length": 5,
+		"min-length": 1,
 		"format-alt-click": "click",
 		"format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
 		"format-icons": [
@@ -278,26 +285,59 @@
 		// "ignored-players": ["firefox"]
 		"max-length": 30,
 	},
+	// "network": {
+	// 	"format": "{ifname}",
+	// 	"format-wifi": "{icon}",
+	// 	"format-ethernet": "󰌘",
+	// 	"format-disconnected": "󰌙",
+	// 	"tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
+	// 	"format-linked": "󰈁 {ifname} (No IP)",
+	// 	"tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+	// 	"tooltip-format-ethernet": "{ifname} 󰌘",
+	// 	"tooltip-format-disconnected": "󰌙 Disconnected",
+	// 	"max-length": 30,
+	// 	"format-icons": [
+	// 		"󰤯",
+	// 		"󰤟",
+	// 		"󰤢",
+	// 		"󰤥",
+	// 		"󰤨"
+	// 	],
+	// 	"on-click-right": "kitty nmtui"
+	// },
 	"network": {
-		"format": "{ifname}",
-		"format-wifi": "{icon}",
-		"format-ethernet": "󰌘",
-		"format-disconnected": "󰌙",
-		"tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
-		"format-linked": "󰈁 {ifname} (No IP)",
-		"tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
-		"tooltip-format-ethernet": "{ifname} 󰌘",
-		"tooltip-format-disconnected": "󰌙 Disconnected",
-		"max-length": 30,
-		"format-icons": [
-			"󰤯",
-			"󰤟",
-			"󰤢",
-			"󰤥",
-			"󰤨"
-		],
-		"on-click-right": "kitty nmtui"
-	},
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "interval": 1,
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{bandwidthDownBytes}/{bandwidthUpBytes} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "min-length": 1,
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+	"network#1": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "interval": 1,
+        "format-wifi": "",
+        "format-ethernet": "",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "⚠",
+        "min-length": 1,
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+	"network#2": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "interval": 1,
+        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-ethernet": "{bandwidthDownBytes}/{bandwidthUpBytes}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected",
+        "min-length": 1,
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
 	"network#speed": {
 		"interval": 1,
 		"format": "{ifname}",
@@ -395,7 +435,7 @@
 	},
 	"tray": {
 		"icon-size": 20,
-		"spacing": 4,
+		"spacing": 2,
 	},
 	"wireplumber": {
 		"format": "{icon} {volume} %",

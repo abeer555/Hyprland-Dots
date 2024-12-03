@@ -154,6 +154,7 @@
 	"on-click-right": "swaync-client -d -sw",
 	"escape": true,
 },
+
 // NOTE:! This is only for Arch and Arch Based Distros  depend: pacman-contrib
 "custom/updater": {
 	"format": " {}",
