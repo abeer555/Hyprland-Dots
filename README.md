@@ -4,10 +4,11 @@
 https://github.com/user-attachments/assets/b3260ae9-d102-42ec-a485-bbc639f805ea
 
 </div>
+![swappy-20241203-194429](https://github.com/user-attachments/assets/eabb766e-6860-40bf-9b8b-f01d7b5910d6)
 
-![swappy-20240929-180827](https://github.com/user-attachments/assets/e07236fd-982a-48ea-b38a-883934f703d2)
+
 ## Game Mode
-![swappy-20240929-181011](https://github.com/user-attachments/assets/0e5e9fad-6c69-412d-8f87-586622f705bd)
+![swappy-20241203-194509](https://github.com/user-attachments/assets/a5ad1994-379c-498a-9893-5cb23439032c)
 
 
 ## About
@@ -28,7 +29,7 @@ chmod +x install.sh
 
 ### Key Features:
 - Added KDE-like taskbar for easy navigation and window management
-![swappy-20240929-181834](https://github.com/user-attachments/assets/0f1613df-079f-48fa-a84b-67330de0b12f)
+![swappy-20241203-194534](https://github.com/user-attachments/assets/8e2a7132-de32-4510-a374-b513ebc67dca)
 
 - Customized color scheme for improved visual aesthetics and reduced eye strain
 - Implemented custom keybindings for enhanced productivity and workflow efficiency
