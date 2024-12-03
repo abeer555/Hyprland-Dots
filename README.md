@@ -4,10 +4,12 @@
 https://github.com/user-attachments/assets/b3260ae9-d102-42ec-a485-bbc639f805ea
 
 </div>
+
 ![swappy-20241203-194429](https://github.com/user-attachments/assets/eabb766e-6860-40bf-9b8b-f01d7b5910d6)
 
 
 ## Game Mode
+
 ![swappy-20241203-194509](https://github.com/user-attachments/assets/a5ad1994-379c-498a-9893-5cb23439032c)
 
 
