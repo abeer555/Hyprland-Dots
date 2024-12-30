@@ -43,7 +43,7 @@ window {
     transparency:               "real";
     cursor:                     "default";
     spacing:                    0px;
-    border:                     4px 0px 4px 0px;
+    border:                     1px 1px 1px 1px;
     border-radius:              30px;
     location:                   center;
     anchor:                     center;
@@ -117,7 +117,7 @@ listview {
     border:                      0px;
 }
 
-/* ---- Dummy ---- */
+/* ---- Dummy ----*/ 
 dummy {
     expand:                      true;
     background-color:            transparent;
@@ -144,10 +144,10 @@ button selected {
 
 /* ---- Scrollbar ---- */
 scrollbar {
-    width:        4px ;
+    width:        1px ;
     border:       0;
     handle-color: @border-color;
-    handle-width: 8px ;
+    handle-width: 3px ;
     padding:      0;
 }
 
@@ -175,7 +175,7 @@ element normal.active {
 }
 
 element selected.normal {
-    border:                      1px 6px 1px 6px;
+    border:                      2px 2px 2px 2px;
     border-radius:               16px;
     border-color:                @selected;
     background-color:            transparent;

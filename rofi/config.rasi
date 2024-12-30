@@ -5,17 +5,17 @@
 
 /* ---- Configuration ---- */
 configuration {
-	font: "Fira Code SemiBold 12";
+	font: "Fira Code SemiBold 15";
 }
 
 /* ---- Window ---- */
 window {
-    width:	60%;
+    width:	80%;
 }
 /* ---- Listview ---- */
 listview {
-  columns: 6;
-  lines: 4;
+  columns: 10;
+  lines: 6;
   fixed-height:	true;
 }
 
@@ -23,16 +23,16 @@ listview {
 element {
   orientation: vertical;
   padding: 12px 0px 0px 0px;
-  spacing: 6px;
-  border-radius: 12px;
+  spacing: 9px;
+  border-radius: 1px;
 }
 
 element-icon {
-  size: 6%;
+  size: 7%;
 }
 
 element-text {
-  font: "Fira Code SemiBold 12";
+  font: "Fira Code SemiBold 13";
   vertical-align: 0.5;
   horizontal-align: 0.5;
 }
