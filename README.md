@@ -8,25 +8,19 @@ https://github.com/user-attachments/assets/636861d8-2a16-4d6f-9f59-4586cb5c8606
 ![swappy-20250114-165640](https://github.com/user-attachments/assets/46734b1e-ce51-4dd9-821e-cc922dda99ab)
 
 
-## Game Mode
+# Hyprland Dotfiles  
 
-![swappy-20241203-194509](https://github.com/user-attachments/assets/a5ad1994-379c-498a-9893-5cb23439032c)
+This repository contains my customized dotfiles for [Hyprland](https://github.com/hyprwm/Hyprland), inspired by the exceptional work of [Jakoolit](https://github.com/JaKooLit). These configurations are tailored to optimize my workflow and enhance the overall Hyprland experience, combining aesthetic refinements with functional improvements.  
 
+## Installation  
 
-## About
+To set up this configuration on your system, follow these steps:  
 
-This repository contains my personalized dotfiles for [Hyprland](https://github.com/hyprwm/Hyprland), built upon the excellent foundation provided by [Jakoolit](https://github.com/JaKooLit). These customizations reflect my preferred setup and workflow, tailored to enhance my Hyprland experience.
-
-
-## Usage
-
-To use this configuration, follow these steps:
-
-```bash
-git clone https://github.com/abeer555/Hyprland-Dots.git
-cd Hyprland-dots
-chmod +x install.sh
-./install.sh
+```bash  
+git clone https://github.com/abeer555/Hyprland-Dots.git  
+cd Hyprland-Dots  
+chmod +x install.sh  
+./install.sh  
 ```
 
 ### Key Features:
@@ -39,11 +33,6 @@ chmod +x install.sh
 
 ## Acknowledgements
 
-A huge thank you to [Jakoolit](https://github.com/JaKooLit) for their outstanding Hyprland dotfiles, which served as the inspiration and starting point for this project. This work builds upon their efforts, and full credit goes to them for the original implementation.
+A special thanks to Jakoolit for their exemplary Hyprland dotfiles, which served as the foundation for this project. This work builds on their contributions, and full credit is due for the original implementation.
 
-Feel free to explore, use, and adapt these dotfiles to suit your needs. Contributions and suggestions are always welcome!
-
-## To Do
-
-- Configure Rofi
-- Add Alt tab functioanlity like windows
+Feel free to explore, adapt, and improve upon these dotfiles to suit your preferences. Contributions, feedback, and suggestions are always welcome!
