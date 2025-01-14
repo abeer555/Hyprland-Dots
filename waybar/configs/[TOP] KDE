@@ -6,24 +6,26 @@
 		"$HOME/.config/waybar/ModulesGroups",
 	],
 	"layer": "top",
-	//"mode": "dock",
+	"mode": "dock",
 	"exclusive": true,
 	"passthrough": false,
 	"position": "top",
-	"spacing": 3,
+	"spacing": 0,
 	"fixed-center": true,
 	"ipc": true,
-	"margin-top": 2,
-	"margin-left": 2,
-	"margin-right": 2,
+	"margin-top": 1,
+	"margin-left": 0,
+	"margin-right": 0,
 	"modules-left": [
-		"custom/menu",
+	  "custom/arch",
+		// "custom/menu",
 		"idle_inhibitor",
 		"custom/icon4",
-		"hyprland/workspaces#rw",
+		"wlr/taskbar",
 	],
 	"modules-center": [
-		"wlr/taskbar",
+		"hyprland/workspaces",
+		"custom/cava_mviz",
 		// "custom/swaync",
 		// "custom/cava_mviz",
 		// "custom/swaync",
@@ -34,9 +36,13 @@
 		"power-profiles-daemon",
     // "group/backlight",
 		// "group/speaker",
-		"custom/speaker",
-		"pulseaudio/slider",
+		// "custom/speaker",
+		// "pulseaudio/slider",
+    "pulseaudio",
+
+		// "custom/separator#line",
 		"battery",
+		// "custom/separator#line",
 		"group/tray",
 		// "custom/net",
 		// "bluetooth",
@@ -81,8 +87,14 @@
 		"format": "{}"
 	},
     "custom/icon4": {
-        "format": "{}",
+        "format": " {} ",
         "on-click": "gnome-calculator",
         "on-click-right": "kitty -e bc"
     },
+		"custom/arch": {
+      "format":"  ",
+      "tooltip": false,
+      "on-click": "rofi -show drun",
+		}
+
 }

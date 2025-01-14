@@ -3,4 +3,5 @@
 
 # For Hyprlock
 
-pidof hyprlock || hyprlock -q --immediate
+pidof hyprlock || hyprlock -q 
+
