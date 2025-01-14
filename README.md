@@ -1,14 +1,10 @@
 # Hyprland Dotfiles
 <div align="center">
-
 https://github.com/user-attachments/assets/636861d8-2a16-4d6f-9f59-4586cb5c8606
-
 </div>
-
 ![swappy-20250114-165640](https://github.com/user-attachments/assets/46734b1e-ce51-4dd9-821e-cc922dda99ab)
 
-
-# Hyprland Dotfiles  
+## About  
 
 This repository contains my customized dotfiles for [Hyprland](https://github.com/hyprwm/Hyprland), inspired by the exceptional work of [Jakoolit](https://github.com/JaKooLit). These configurations are tailored to optimize my workflow and enhance the overall Hyprland experience, combining aesthetic refinements with functional improvements.  
 
