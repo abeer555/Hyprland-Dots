@@ -21,7 +21,10 @@
 		// "custom/menu",
 		"idle_inhibitor",
 		"custom/icon4",
-		"wlr/taskbar",
+		// "wlr/taskbar",
+	"custom/separator#blank_2",
+
+		
 	],
 	"modules-center": [
 		"hyprland/workspaces",
@@ -38,8 +41,8 @@
 		// "group/speaker",
 		// "custom/speaker",
 		// "pulseaudio/slider",
+		"network",
     "pulseaudio",
-
 		// "custom/separator#line",
 		"battery",
 		// "custom/separator#line",
@@ -95,6 +98,19 @@
       "format":"  ",
       "tooltip": false,
       "on-click": "rofi -show drun",
-		}
+		},
+		"network": {
+        "tooltip": true,
+        "format-wifi": " ",
+        "rotate": 0,
+        "format-ethernet": "󰈀 ",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪 ",
+        "tooltip-format-disconnected": "Disconnected",
+        "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+        "interval": 2,
+    },
+
 
 }

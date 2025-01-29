@@ -15,7 +15,7 @@
 	"modules": [
 		"network#1",
 		"network#2",
-		"network#speed",
+		// "network#speed",
 		"tray",
 	]
 },
