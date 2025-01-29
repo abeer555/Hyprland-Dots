@@ -17,7 +17,8 @@
 	"margin-left": 0,
 	"margin-right": 0,
 	"modules-left": [
-	  "custom/arch",
+	  // "custom/arch",
+		"group/cpu",
 		// "custom/menu",
 		"idle_inhibitor",
 		"custom/icon4",
@@ -29,32 +30,31 @@
 	"modules-center": [
 		"hyprland/workspaces",
 		"custom/cava_mviz",
-		// "custom/swaync",
-		// "custom/cava_mviz",
-		// "custom/swaync",
-		// "custom/separator#blank",
-		"group/cpu",
+	// "custom/separator#blank_2",
+		"custom/swaync",
+	"custom/separator#blank_2",
+		// "group/cpu",
+	"custom/separator#blank_2",
+
 	],
 	"modules-right": [
 		"power-profiles-daemon",
-    // "group/backlight",
-		// "group/speaker",
-		// "custom/speaker",
-		// "pulseaudio/slider",
-		"network",
+    "network",
     "pulseaudio",
-		// "custom/separator#line",
 		"battery",
 		// "custom/separator#line",
 		"group/tray",
-		// "custom/net",
-		// "bluetooth",
-		// "network",
 		"clock#2",
 		"custom/lock",
 		"custom/power",
 	],
 	// Additional modules //
+	"custom/arch": {
+      "format":"  ",
+      "tooltip": false,
+      "on-click": "rofi -show drun",
+		},
+	
 	"custom/net": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "interval": 1,
@@ -71,34 +71,44 @@
 		"max": 50,
 		"orientation": "horizontal"
 	},
-	"custom/speaker": {
-		// "exec": "echo '🔊'",
-		"exec": "echo '📢'",
-
-		"interval": 1,
-		"format": "{}"
+	"group/cpu":{
+		"orientation": "inherit",
+		"drawer": {
+			"transition-duration": 500,
+			"children-class": "tempurature",
+			"transition-left-to-right": true
+					},
+		"modules": [
+			"custom/arch",
+			"cpuIcon",
+			"cpu",
+			"memory",
+			"temperature",
+		]
 	},
-	"backlight/slider": {
-		"min": 0,
-		"max": 100,
-		"orientation": "horizontal",
-		"device": "intel_backlight"
-	},
-	"custom/backlight": {
-		"exec": "echo '✨'",
-		"interval": 1,
-		"format": "{}"
-	},
-    "custom/icon4": {
-        "format": " {} ",
-        "on-click": "gnome-calculator",
-        "on-click-right": "kitty -e bc"
-    },
-		"custom/arch": {
-      "format":"  ",
-      "tooltip": false,
-      "on-click": "rofi -show drun",
-		},
+	"pulseaudio": {
+        "format": "{icon} {volume}%",
+        "rotate": 0,
+        "format-muted": " 婢 ",
+        
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+				"scroll-step": 5.0,
+				"on-click": "$HOME/.config/hypr/scripts/Volume.sh --toggle",
+				"on-click-right": "pavucontrol -t 3",
+				"on-scroll-up": "$HOME/.config/hypr/scripts/Volume.sh --inc",
+				"on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --dec",
+				"tooltip-format": "{icon} {desc} | {volume}%",
+				"smooth-scrolling-threshold": 1,
+  },
+		
 		"network": {
         "tooltip": true,
         "format-wifi": " ",

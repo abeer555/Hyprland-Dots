@@ -30,21 +30,7 @@
 		"battery"
 	]
 },
-"group/cpu":{
-	"orientation": "inherit",
-	"drawer": {
-		"transition-duration": 500,
-		"children-class": "tempurature",
-		"transition-left-to-right": true
-        },
-	"modules": [
-		"custom/swaync",
-		"cpuIcon",
-		"cpu",
-		"memory",
-		"temperature",
-	]
-},
+
 "group/backlight":{
 	"orientation": "inherit",
 	"drawer": {

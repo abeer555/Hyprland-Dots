@@ -334,7 +334,9 @@
 	// 	],
 	// 	"on-click-right": "kitty nmtui"
 	// },
+	
 	"network": {
+				"on-click-right": "kitty nmtui",
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "interval": 1,
         "format-wifi": "{essid} ({signalStrength}%) ",
@@ -348,7 +350,10 @@
 	"network#1": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "interval": 1,
-        "format-wifi": "",
+        // "format-wifi": "",
+        "format-wifi": "{essid}",
+        // "format-wifi": "◀",
+				
         "format-ethernet": "",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
@@ -359,7 +364,7 @@
 	"network#2": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "interval": 1,
-        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-wifi": "({signalStrength}%)",
         "format-ethernet": "{bandwidthDownBytes}/{bandwidthUpBytes}",
         "tooltip-format": "{ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP) ",
@@ -399,35 +404,35 @@
 			"power-saver": ""
 		}
 	},
-	"pulseaudio": {
-		"format": "{icon} {volume}%",
-		"format-bluetooth": "{icon} 󰂰 {volume}%",
-		"format-muted": "󰖁",
-		"format-icons": {
-			"headphone": "",
-			"hands-free": "",
-			"headset": "",
-			"phone": "",
-			"portable": "",
-			"car": "",
-			"default": [
-				"",
-				"",
-				"󰕾",
-				""
-			],
-			"ignored-sinks": [
-				"Easy Effects Sink"
-			],
-		},
-		"scroll-step": 5.0,
-		"on-click": "$HOME/.config/hypr/scripts/Volume.sh --toggle",
-		"on-click-right": "pavucontrol -t 3",
-		"on-scroll-up": "$HOME/.config/hypr/scripts/Volume.sh --inc",
-		"on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --dec",
-		"tooltip-format": "{icon} {desc} | {volume}%",
-		"smooth-scrolling-threshold": 1,
-	},
+	// "pulseaudio": {
+	// 	"format": "{icon} {volume}%",
+	// 	"format-bluetooth": "{icon} 󰂰 {volume}%",
+	// 	"format-muted": "󰖁",
+	// 	"format-icons": {
+	// 		"headphone": "",
+	// 		"hands-free": "",
+	// 		"headset": "",
+	// 		"phone": "",
+	// 		"portable": "",
+	// 		"car": "",
+	// 		"default": [
+	// 			"",
+	// 			"",
+	// 			"󰕾",
+	// 			""
+	// 		],
+	// 		"ignored-sinks": [
+	// 			"Easy Effects Sink"
+	// 		],
+	// 	},
+	// 	"scroll-step": 5.0,
+	// 	"on-click": "$HOME/.config/hypr/scripts/Volume.sh --toggle",
+	// 	"on-click-right": "pavucontrol -t 3",
+	// 	"on-scroll-up": "$HOME/.config/hypr/scripts/Volume.sh --inc",
+	// 	"on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --dec",
+	// 	"tooltip-format": "{icon} {desc} | {volume}%",
+	// 	"smooth-scrolling-threshold": 1,
+	// },
 	"pulseaudio#1": {
 		"format": "{icon} {volume}%",
 		"format-bluetooth": "{icon} {volume}%",
