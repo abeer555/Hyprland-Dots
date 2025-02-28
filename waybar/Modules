@@ -198,7 +198,7 @@
 		"format-alt": "{:%A, %d %B, %Y (%R)}"
 	},
 
-	"cpuIcon": {
+	"Icon": {
 		"format": "󰍛",
 		"interval": 1,
 		"min-length": 1,
