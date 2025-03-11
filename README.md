@@ -1,7 +1,7 @@
 # Hyprland Dotfiles
 <div align="center">
   
-https://github.com/user-attachments/assets/636861d8-2a16-4d6f-9f59-4586cb5c8606
+https://github.com/user-attachments/assets/fb5765fd-dd50-4ae0-92e8-ae94ef3e04f1
 
 </div>
 
