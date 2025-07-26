@@ -2,13 +2,12 @@
 
 ## Supported Versions
 
-We actively support and provide security updates for the following versions:
+We actively support and provide security updates for the current version:
 
-| Version | Supported              |
-| ------- | ---------------------- |
-| 2.1.x   | ✅ Yes                 |
-| 2.0.x   | ✅ Yes                 |
-| 1.x     | ❌ No longer supported |
+| Version          | Supported              |
+| ---------------- | ---------------------- |
+| Current          | ✅ Yes                 |
+| Previous commits | ⚠️ Best effort support |
 
 ## Reporting a Vulnerability
 

@@ -9,48 +9,68 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Comprehensive contributing guidelines
-- Automated testing workflow
-- Code quality checks
-- Documentation improvements
+- Comprehensive contributing guidelines and documentation
+- Automated testing workflow with GitHub Actions
+- Professional issue and pull request templates
+- Security policy and vulnerability reporting procedures
+- Code quality validation scripts
+- Comprehensive .gitignore for better repository hygiene
 
-### Changed
+### Enhanced
 
-- Enhanced installation script with better error handling
-- Improved backup functionality
+- Installation script with improved error handling
+- Backup functionality with better safeguards
+- Documentation with professional standards
 
-### Fixed
-
-- Minor configuration inconsistencies
-
-## [2.1.0] - 2025-01-26
+## [1.0.0] - 2025-07-26
 
 ### Added
 
-- **KDE-like Taskbar Integration**: Enhanced Waybar configuration with KDE-style taskbar for improved window management
-- **Custom Color Schemes**: Implemented personalized color themes optimized for reduced eye strain
-- **Enhanced Keybindings**: Added productivity-focused custom keyboard shortcuts
-- **Backup System**: Intelligent backup creation during installation to prevent data loss
-- **Multi-Display Support**: Improved configuration for multi-monitor setups
-- **Status Scripts**: Added comprehensive system status monitoring scripts
+- **Initial Release**: Personal fork of JaKooLit's Hyprland-Dots
+- **Enhanced Waybar Configuration**: Added KDE-like taskbar functionality for improved productivity
+- **Custom Color Schemes**: Implemented personalized themes optimized for reduced eye strain
+- **Professional Documentation**: Added comprehensive README, contributing guidelines, and project structure
+- **Installation Enhancements**: Improved backup system and installation process
+- **Development Tooling**: Added testing scripts and validation tools
 
-### Changed
+### Based On
 
-- **Installation Process**: Streamlined installation with automatic backup creation
-- **Waybar Configuration**: Reorganized Waybar configs for better modularity
-- **Script Organization**: Improved script structure in `hypr/scripts/` directory
-- **Theme Management**: Enhanced theme switching capabilities
+- **Original Work**: [JaKooLit's Hyprland-Dots](https://github.com/JaKooLit/Hyprland-Dots)
+- **License**: GNU General Public License v3.0 (maintained from original)
+- **Core Components**: Inherits complete Hyprland configuration suite, AGS widgets, Rofi themes, and system scripts
 
-### Fixed
+### Attribution
 
-- **Configuration Conflicts**: Resolved potential conflicts with existing Hyprland configs
-- **Permission Issues**: Fixed executable permissions for shell scripts
-- **Path Resolution**: Improved file path handling in installation script
+This project is a derivative work that builds upon JaKooLit's excellent foundation while adding personal enhancements and professional development practices.
 
-### Security
+---
 
-- **Input Validation**: Added proper input validation in shell scripts
-- **Safe Backups**: Secure backup creation with timestamp-based naming
+## Development Notes
+
+### Version Numbering
+
+This project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html):
+
+- **Major Version** (X.0.0): Breaking changes, significant architecture changes
+- **Minor Version** (X.Y.0): New features, enhancements, backward compatible
+- **Patch Version** (X.Y.Z): Bug fixes, minor improvements
+
+### Contributing to Changelog
+
+When adding entries:
+
+1. **Use Past Tense**: "Added feature X" not "Add feature X"
+2. **Be Specific**: Include relevant details and context
+3. **Categorize**: Use appropriate sections (Added, Changed, Fixed, etc.)
+4. **Credit Contributors**: Acknowledge community contributions
+
+### Attribution
+
+This project is a derivative work based on [JaKooLit's Hyprland-Dots](https://github.com/JaKooLit/Hyprland-Dots) under GPL v3 license. All original copyright notices are preserved and the same license is maintained.
+
+---
+
+_For detailed commit history, see the [GitHub commits page](https://github.com/abeer555/Hyprland-Dots/commits/master)._
 
 ## [2.0.0] - 2025-01-15
 

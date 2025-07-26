@@ -104,16 +104,16 @@ This project complies with all GPL v3 license requirements:
 
 ---
 
-## 🔄 Version History
+## 🔄 Development Timeline
 
-### v2.1.0 (Current) - Enhanced Professional Fork
+### Current State - Enhanced Professional Fork
 
 - Added comprehensive development practices
 - Improved documentation and project management
 - Enhanced installation and testing systems
 - Maintained full attribution to original work
 
-### v2.0.0 - Initial Fork
+### Initial Fork
 
 - Forked from JaKooLit's Hyprland-Dots
 - Added KDE-like taskbar functionality
