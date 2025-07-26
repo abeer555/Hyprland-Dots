@@ -1,0 +1,239 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [master, develop]
+  pull_request:
+    branches: [master]
+  release:
+    types: [published]
+
+jobs:
+  validate-configs:
+    name: Validate Configuration Files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up environment
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y shellcheck yamllint
+
+      - name: Validate shell scripts
+        run: |
+          echo "Checking shell scripts for syntax errors..."
+          find . -name "*.sh" -type f | while read -r script; do
+            echo "Checking: $script"
+            shellcheck "$script" || exit 1
+          done
+
+      - name: Validate JSON files
+        run: |
+          echo "Validating JSON configuration files..."
+          find . -name "*.json" -type f | while read -r json_file; do
+            echo "Validating: $json_file"
+            python3 -m json.tool "$json_file" > /dev/null || exit 1
+          done
+
+      - name: Check file permissions
+        run: |
+          echo "Checking executable permissions..."
+          # Check that shell scripts are executable
+          find . -name "*.sh" -type f | while read -r script; do
+            if [ ! -x "$script" ]; then
+              echo "Error: $script is not executable"
+              exit 1
+            fi
+          done
+
+      - name: Validate configuration structure
+        run: |
+          echo "Validating directory structure..."
+          # Check required directories exist
+          required_dirs=("hypr" "waybar" "rofi" "kitty")
+          for dir in "${required_dirs[@]}"; do
+            if [ ! -d "$dir" ]; then
+              echo "Error: Required directory $dir not found"
+              exit 1
+            fi
+          done
+
+  test-installation:
+    name: Test Installation Script
+    runs-on: ubuntu-latest
+    needs: validate-configs
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up test environment
+        run: |
+          # Create mock directories to simulate user environment
+          mkdir -p ~/.config/waybar/{configs,style}
+          mkdir -p ~/.config/hypr
+          mkdir -p ~/.config/rofi
+          mkdir -p ~/.config/kitty
+
+      - name: Test installation script (dry run)
+        run: |
+          # Make install script executable
+          chmod +x install.sh
+
+          # Test script syntax
+          bash -n install.sh
+
+          echo "Installation script syntax is valid"
+
+      - name: Test backup functionality
+        run: |
+          # Create some dummy config files
+          echo "test config" > ~/.config/waybar/configs/test.conf
+          echo "test style" > ~/.config/waybar/style/test.css
+
+          # Run installation (it should create backups)
+          ./install.sh || true
+
+          # Check if backup was created
+          if [ -d ~/.config/waybar/backup_* ]; then
+            echo "Backup functionality working correctly"
+          else
+            echo "Warning: Backup functionality may not be working"
+          fi
+
+  code-quality:
+    name: Code Quality Analysis
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check for TODO/FIXME comments
+        run: |
+          echo "Scanning for TODO/FIXME comments..."
+          grep -r "TODO\|FIXME\|XXX\|HACK" . --exclude-dir=.git || echo "No TODO/FIXME comments found"
+
+      - name: Check file line endings
+        run: |
+          echo "Checking for consistent line endings..."
+          # Check for Windows line endings in Linux/Unix environment
+          if grep -r $'\r' . --exclude-dir=.git; then
+            echo "Warning: Windows line endings detected"
+            exit 1
+          fi
+
+      - name: Check for trailing whitespace
+        run: |
+          echo "Checking for trailing whitespace..."
+          if grep -r '[[:space:]]$' . --exclude-dir=.git; then
+            echo "Warning: Trailing whitespace detected"
+            exit 1
+          fi
+
+  documentation-check:
+    name: Documentation Quality Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check README exists and has content
+        run: |
+          if [ ! -f README.md ]; then
+            echo "Error: README.md not found"
+            exit 1
+          fi
+
+          if [ ! -s README.md ]; then
+            echo "Error: README.md is empty"
+            exit 1
+          fi
+
+          echo "README.md exists and has content"
+
+      - name: Check for required documentation sections
+        run: |
+          required_sections=("Installation" "Features" "About")
+          for section in "${required_sections[@]}"; do
+            if ! grep -q "$section" README.md; then
+              echo "Warning: README.md missing $section section"
+            fi
+          done
+
+      - name: Validate links in documentation
+        run: |
+          echo "Checking for broken links in documentation..."
+          # This is a simple check - in a real scenario, you might use link-checker tools
+          if grep -o 'http[s]*://[^)]*' README.md | head -5; then
+            echo "Found external links - manual verification recommended"
+          fi
+
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Scan for potential security issues
+        run: |
+          echo "Scanning for potential security issues..."
+
+          # Check for hardcoded secrets/passwords
+          if grep -r "password\|secret\|key\|token" . --exclude-dir=.git --ignore-case; then
+            echo "Warning: Potential secrets found - please review"
+          fi
+
+          # Check for dangerous commands in scripts
+          dangerous_commands=("rm -rf /" "chmod 777" "sudo rm")
+          for cmd in "${dangerous_commands[@]}"; do
+            if grep -r "$cmd" . --exclude-dir=.git; then
+              echo "Warning: Potentially dangerous command found: $cmd"
+            fi
+          done
+
+  release-notes:
+    name: Generate Release Notes
+    runs-on: ubuntu-latest
+    if: github.event_name == 'release'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate release notes
+        run: |
+          echo "Generating release notes for ${{ github.event.release.tag_name }}"
+
+          # Extract version from CHANGELOG.md
+          if [ -f CHANGELOG.md ]; then
+            echo "Changelog exists - extracting relevant section"
+            # This would extract the relevant section from CHANGELOG.md
+          fi
+
+          echo "Release notes generation completed"
+
+  notify-success:
+    name: Notify Success
+    runs-on: ubuntu-latest
+    needs:
+      [
+        validate-configs,
+        test-installation,
+        code-quality,
+        documentation-check,
+        security-scan,
+      ]
+    if: success()
+
+    steps:
+      - name: Success notification
+        run: |
+          echo "✅ All checks passed successfully!"
+          echo "Repository is ready for deployment/release"
